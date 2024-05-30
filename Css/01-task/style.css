@@ -1,8 +1,9 @@
 nav{
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: space-around;
 }
+
 
 ul{
     display: flex;
@@ -18,4 +19,16 @@ button{
     border-radius: 100px;
     color: white;
     font-weight: bold;
+}
+
+section{
+    margin: 2rem;
+    background-color: aqua;
+    height: 100vh;
+}
+
+
+.nav{
+    position: fixed;
+    width: 100%;
 }
