@@ -1,0 +1,21 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+button{
+    background-color: #04DDB2;
+    border: none;
+    height: 48px;
+    width: 129px;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+}
