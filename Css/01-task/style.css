@@ -64,3 +64,10 @@ p{
 .green{
     color: #04DDB2;
 }
+
+footer{
+    display: grid;
+    background-color: #333;
+    color: white;
+    grid-template-columns: repeat(4, 1fr);
+}
