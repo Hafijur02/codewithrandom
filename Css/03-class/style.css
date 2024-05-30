@@ -1,13 +1,13 @@
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.container{
+.container {
     width: 250px;
-    height: 250px; 
+    height: 250px;
     border: 5px solid black;
 
     display: grid;
@@ -15,9 +15,37 @@ body{
     grid-template-rows: 50px 50px 50px 50px 50px;
 }
 
-.item{
+.item {
     border: 1px solid red;
     height: 50px;
     width: 50px;
     background-color: aqua;
+}
+
+.item-2 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 3;
+    grid-row-end: 3;
+}
+
+.item-3 {
+    grid-column-start: 3;
+    grid-row-start: 3;
+    grid-column-end: 4;
+    grid-row-end: 4;
+}
+
+.item-4 {
+    grid-column-start: 4;
+    grid-row-start: 4;
+    grid-column-end: 5;
+    grid-row-end: 5;
+}
+
+.item-5 {
+    grid-column-start: 5;
+    grid-row-start: 5;
+    grid-column-end: -1;
+    grid-row-end: -1;
 }
