@@ -1,0 +1,23 @@
+button{
+    background-color: blueviolet;
+    color: white;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 1000px;
+    border: none;
+    font-size: 12px;
+
+}
+
+button:hover{
+    height: 3.4rem;
+    opacity: 0.75;
+}
+
+.subscriber{
+    background-color: red;
+}
+
+#blue{
+    background-color: blue;
+}
