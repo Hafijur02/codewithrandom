@@ -1,0 +1,12 @@
+span{
+    background-color: yellow;
+}
+
+p{
+    background-color: turquoise;
+}
+
+body{
+    display: flex;
+    gap: 10px;
+}
