@@ -1,5 +1,6 @@
 body{
-    background-color: #00b4d8;
+    background-color: #333;
+    color: aliceblue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,14 +8,18 @@ body{
 }
 
 .heading{ 
-    position: relative;
-    transition: all 0.3s;
-    transform: translateX(-300px);
+    /* position: relative; */
+    /* transition: all 0.3s; */
+    /* transform: translateX(-300px); */
+    /* transform: translateY(-20px); */
+    /* transition: all 0.3s 0.3s; */
+    transition: all 1s;
 }
 
 .heading:hover{
-    font-size: 48px;
-    color: chartreuse; 
+    font-size: 48px; 
+    color: rgb(86, 226, 219);
     cursor: pointer;
-    transform: translateX(-100px);
+    /* transform: translateX(-100px); */
+    transform: translateY(-10px);
 }
