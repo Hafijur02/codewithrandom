@@ -1,0 +1,20 @@
+body{
+    background-color: #00b4d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.heading{ 
+    position: relative;
+    transition: all 0.3s;
+    transform: translateX(-300px);
+}
+
+.heading:hover{
+    font-size: 48px;
+    color: chartreuse; 
+    cursor: pointer;
+    transform: translateX(-100px);
+}

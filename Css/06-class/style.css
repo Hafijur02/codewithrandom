@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    position: fixed;
+    width: 25rem;
+    top: 5%;  
+    background-color: rgb(231, 153, 57);
+    padding: 0.75rem;
+    border-radius: 1000px;
+}
+
+ul{
+    display: flex; 
+    list-style: none;
+    justify-content: space-around; 
+}
+
+a{
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(235, 190, 106);
+}
+
+main{
+    margin-top: 7rem;
+}
+
+h1{
+    text-align: center;
+    font-size: 44px;
+}
+
+.profile-img{
+    height: 20rem;
+    width: 15rem; 
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
