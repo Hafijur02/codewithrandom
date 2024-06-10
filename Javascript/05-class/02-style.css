@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+#greetingInput1, #greetingInput2 {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: calc(100% - 22px); /* To account for padding and border */
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#display {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  .container {
+      padding: 15px;
+  }
+
+  #greetingInput1, #greetingInput2, button {
+      font-size: 14px;
+  }
+
+  #display {
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+      padding: 10px;
+  }
+
+  #greetingInput1, #greetingInput2, button {
+      font-size: 12px;
+  }
+
+  #display {
+      font-size: 18px;
+  }
+}
