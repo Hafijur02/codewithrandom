@@ -1,0 +1,23 @@
+.card {
+  height: 15rem;
+  width: 30rem;
+  display: flex;
+  background: rgb(217, 194, 194);
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.card_img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+}
+
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
