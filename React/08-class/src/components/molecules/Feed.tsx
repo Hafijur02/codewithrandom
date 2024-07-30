@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NewPostForm from "./NewPostForm";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
-import { bucket, db } from "../../lib/firebase";
+import { bucket, db, auth } from "../../lib/firebase";
 import { Card } from "@nextui-org/react";
 import { collection, getDocs } from "firebase/firestore";
 
@@ -31,6 +31,7 @@ const Feed = () => {
           const post = postMetadata.find((p) => p.id === itemRef.name); // Match metadata by document ID
           return {
             url,
+            user: auth.currentUser?.email || "Anonymous", // Fallback to "Anonymous" if user is not available
             title: post?.title || "Untitled",
             description: post?.description || "No description",
           };
@@ -65,6 +66,10 @@ const Feed = () => {
                     className="w-full h-64 object-cover rounded-t-lg"
                   />
                   <div className="p-4">
+                    <p className="text-gray-500">
+                      Posted by: {auth.currentUser?.email}
+                    </p>{" "}
+                    {/* Display user information */}
                     <p className="font-semibold">Title: {post.title}</p>
                     <p className="text-gray-600">
                       Description: {post.description}

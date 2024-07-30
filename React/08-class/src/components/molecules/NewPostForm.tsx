@@ -12,7 +12,7 @@ import {
   Progress,
 } from "@nextui-org/react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { bucket, db } from "../../lib/firebase";
+import { bucket, db, auth } from "../../lib/firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 export default function NewPostForm() {
@@ -37,6 +37,11 @@ export default function NewPostForm() {
       return;
     }
 
+    if (!auth.currentUser) {
+      setError("You must be logged in to upload a post.");
+      return;
+    }
+
     setError(null);
 
     // Create a new document with the file name as ID
@@ -45,6 +50,7 @@ export default function NewPostForm() {
       title: values.title,
       description: values.description,
       timestamp: serverTimestamp(),
+      user: auth.currentUser.email, // Store user information
     });
 
     const storageRef = ref(bucket, `images/${file.name}`);
@@ -80,7 +86,7 @@ export default function NewPostForm() {
   return (
     <>
       <Button onPress={onOpen} color="primary">
-        Open Modal
+        New Post
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpen}>
         <ModalContent>
@@ -88,7 +94,6 @@ export default function NewPostForm() {
             <ModalHeader className="flex flex-col gap-1">New Post</ModalHeader>
             <ModalBody>
               <Input
-                autoFocus
                 type="file"
                 accept="image/*"
                 aria-label="Image upload"
@@ -97,7 +102,6 @@ export default function NewPostForm() {
                 onChange={handleFileChange}
               />
               <Input
-                autoFocus
                 type="text"
                 label="Title"
                 placeholder="Write a title"
@@ -106,7 +110,6 @@ export default function NewPostForm() {
                 className="mt-4"
               />
               <Input
-                autoFocus
                 type="text"
                 label="Description"
                 placeholder="Write a description"
@@ -114,7 +117,13 @@ export default function NewPostForm() {
                 {...register("description", { required: true })}
                 className="mt-4"
               />
-              {progress > 0 && <Progress value={progress} className="mt-4" />}
+              {progress > 0 && (
+                <div className="mt-4">
+                  <Progress value={progress} />
+                  <p>{Math.round(progress)}%</p>{" "}
+                  {/* Display the progress as a percentage */}
+                </div>
+              )}
               {error && <p className="text-red-500 mt-2">{error}</p>}
             </ModalBody>
             <ModalFooter>
